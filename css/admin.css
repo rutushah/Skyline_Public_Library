@@ -64,6 +64,33 @@
     margin-left: 30rem;
 }
 
+.user_requestsHeading h2{
+    margin-top: 2rem;
+    margin-left: 9rem;
+}
+
+.input-group{
+    margin-top: -3rem;
+    margin-left: 66rem;
+}
+
+.userRequestList{
+    margin-left: 8rem;
+    font-weight: normal;
+}
+
+.userRequests, .addCategory{
+    margin-top: 2rem;
+    margin-left: 9rem;
+    font-weight: normal;
+}
+
+
+.user_buttons{
+    margin-top: 4rem;
+    margin-left: 6rem;   
+}
+
 .inner_page_title h1{
     margin: 10rem 0 4rem 12rem;
 }

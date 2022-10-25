@@ -1,0 +1,61 @@
+.imgscale{
+	height: 32rem;
+	width: 100rem;
+}
+.fontfamilychange{
+	font-family: arial;
+	font-size: 0.89rem;
+	margin-bottom: 0.5rem;
+    letter-spacing: 0.11rem;
+}
+.paddingtopminus{
+	margin-top: -0.8rem;
+}
+.copyright{
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: lighter;
+	background-color: rgb(116,183,46);
+}
+.text-rightside{
+	float: right;
+}
+.imagescenter{
+	padding-top: 40%;
+	height: 28rem;
+}
+.customsidebackground{
+	margin-top: 4.5rem;
+	background-color: rgb(245, 244, 242);
+}
+.fontincrease{
+	font-size: 2rem;
+	float: center;
+}
+.foroverflow
+{
+	height: 36rem;
+}
+.dropdowncolor{
+	color: white;
+}
+.fontincrese{
+	font-size: 1.4rem;
+}
+.responsive{
+	width: 100%;
+	height: auto;
+}
+.responfont{
+	font-size: 1.3rem;
+}
+#more{
+	display: none;
+}
+.logomodify{
+	margin-bottom: -4rem;
+    text-align: center;
+}
+.logo1{
+	text-align: center;
+}
