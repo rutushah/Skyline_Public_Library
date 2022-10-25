@@ -13,19 +13,23 @@ if(isset($_SESSION["role"])){
     // die();
 }
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>User Login</title>
-  <link href="../css/bootstrap.css" rel="stylesheet">
-    <script src="../js/bootstrap.js"></script>
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/user.css">
-    <!-- <script type="text/javascript" src="js/script.js"></script> -->
+    <style>
+         <?php
+            include "../js/main.js";
+            include "../css/user.css";  
+            include "../css/bootstrap.css";
+            include "../js/bootstrap.js";
+            ?>
+      </style>
 </head>
-
 <?php
   $role = $email = $password = $id = "";
   if (isset($_POST['login'])) {
@@ -132,17 +136,16 @@ if(isset($_SESSION["role"])){
     }
   }
 ?>
-
 <body>
   <div class="container">
     <div class="row ">
       <div class="col-sm-12 col-md-6 d-flex justify-content-center mt-5">
         <div class="content">
           <div class="from-wrapper ">
-            <div class="mt-5"></div>
-            <div class="header display-5 h5 mt-5">
-              Skyline Public Library Library
-            </div>
+            <div class=" display-5 h5 justify-content-center fw-bolder logo1">
+                           <img src="../images/logo.png" class="img-fluid logomodify">
+                        </div>
+            
             <?php 
               if($user_selected_role == "admin"){
                 echo '<div class="display-5 p-2 mb-3 ">Admin Login</div>';
@@ -153,23 +156,23 @@ if(isset($_SESSION["role"])){
               }
             ?>
             <form action="" method="post">
-              <div class="mb-3 ">
-                <label for="email" class="form-label fw-light">E-mail address</label>
-                <input type="text" class="form-control fw-lighter" id="emailaddress" name = "email" placeholder="enter your email address">
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label fw-light">Password</label>
-                <input type="password" class="form-control fw-lighter" id="passwords" name = "password" placeholder="enter your password">
-              </div>
-              <?php 
+            <div class="mb-3 ">
+  <label for="email" class="form-label fw-light">E-mail address</label>
+  <input type="text" class="form-control fw-lighter" id="emailaddress" name = "email" placeholder="enter your email address">
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput2" class="form-label fw-light">Password</label>
+  <input type="password" class="form-control fw-lighter" id="passwords" name = "password" placeholder="enter your password">
+</div>
+<?php 
                 if($user_selected_role == "user"){
                   echo '<div class="mb-3"><a class="text-success text-rightside" href="#"><u>Forgot?</u></a></div>';
                 }
               ?>
-              <div class="col-12 justify-content-center p-2 d-flex flex-row-reverse mb-3">
-                  <button type="submit" id="login" class="btn btn-primary px-3 py-2 rounded-4  bg-success"  name="login">Sign in</button>
-              </div>
-              <?php
+<div class="col-12 justify-content-center p-2 d-flex flex-row-reverse mb-3">
+    <button type="submit" id="login" name="login" class="btn btn-primary px-3 py-2 rounded-4  bg-success">Sign in</button>
+  </div>
+  <?php
                 if($user_selected_role == "user" ){
                   echo "
                     <div class='col-12 justify-content-center  d-flex flex-row-reverse mb-3'>
@@ -183,12 +186,10 @@ if(isset($_SESSION["role"])){
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6 customsidebackground">
+      <div class="col-sm-12 col-md-6 customsidebackground mt-5">
         <img src="../images/side_image.png" class="img-fluid imagescenter">
       </div>
     </div>
   </div>
-
-
 </body>
 </html>
