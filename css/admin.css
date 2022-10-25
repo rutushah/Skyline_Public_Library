@@ -1,0 +1,87 @@
+/* Start CSS for header and sidebar*/
+
+.navbar svg{
+    margin-left: 4.5rem;
+}
+
+.user-options{
+    position: relative;
+    margin-right: 5rem;
+    display: inline-block;
+}
+
+.logout{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 1px;
+    z-index: 1;
+    margin: 0.1rem 0 0 1rem;
+    text-align: center;
+}
+
+.user-options:hover .logout{
+    display: block;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    padding: 70px 0 0 10px;
+    border-right: 1px solid;
+    
+}
+
+.left-sidebar{
+    position: sticky;
+    margin-top: 5rem;
+    height: calc(100vh - 70px);
+}
+
+.submenu{
+    display: none;
+    list-style: none;
+}
+
+.welcome_msg{
+    margin-left: 50rem;
+    text-decoration-line: underline;
+    font-weight: bold;
+    font-size: large;
+}
+
+.main_content{
+    margin-top: 10rem;
+    margin-left: 10rem;
+}
+
+.dashboard h1{
+    margin-top: 10rem;
+    margin-left: 30rem;
+}
+
+.inner_page_title h1{
+    margin: 10rem 0 4rem 12rem;
+}
+
+/*End CSS for header and sidebar*/
+
+/* Common CSS for all forms */
+
+.card{
+    margin: 10rem 0rem 0rem 25rem;
+    width: 60rem;
+    height: fit-content;
+}
+
+.card-header{
+    font-weight: bold;
+}
+
+form{
+    margin:  0rem 0rem 25rem;
+}
