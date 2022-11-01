@@ -12,3 +12,16 @@
     document.getElementById("err_msg").innerHTML = '<p style = "color:red">Please select the Role!!</p>';
     return false;
 }
+
+
+/**
+ * 
+ * Redirect to login page
+ * 
+ */
+
+ function redirectToLoginPage(){
+    window.location.href = 'user_login.php?role=user';
+}
+
+
