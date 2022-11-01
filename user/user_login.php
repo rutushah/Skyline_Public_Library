@@ -59,7 +59,7 @@ if(isset($_SESSION["role"])){
         //die();
 
         $result = "SELECT * FROM `users` WHERE user_role = '$selected_user_role' AND (email_id = '$email') 
-        AND user_status = 0 AND account_status = 0";
+        AND user_status = 0 AND account_status = 0 AND payment_status = 0";
         $query_result = mysqli_query($mysqli, $result) or die( mysqli_error($mysqli));
         $user_matched = mysqli_num_rows($query_result);
         $Row = mysqli_fetch_row($query_result);

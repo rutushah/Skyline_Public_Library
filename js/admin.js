@@ -1,6 +1,6 @@
-$(document).ready(function() {
-    $('.open_submenu').click(function () {
-      $('.submenu', this).toggle();
+jQuery(document).ready(function() {
+  jQuery('.open_submenu').click(function () {
+    jQuery('.submenu', this).toggle();
     });
 });
 
@@ -31,6 +31,16 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+/**
+ * 
+ * Redirect to all staff page
+ * 
+ */
+
+ function redirectToStaffListPage()
+ {
+  window.location.href = 'viewAllStaff.php';
+}
 
 //search focus
 const searchFocus = document.getElementById('search-focus');
