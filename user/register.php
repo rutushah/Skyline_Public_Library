@@ -1,14 +1,9 @@
 <?php
     include_once("../dbConfig.php");
 ?>
-  <?php
-               //session_start();
+             <?php
                if(isset($_SESSION["role"])){
-                  
-                  $role = $_POST['role'];
-                  //$_SESSION['role'] = $_POST['role'];
-                  //header("Location: login.php?role=$role");
-                  
+                  $role = $_POST['role'];                  
                }
             ?>
 
@@ -174,14 +169,7 @@
         return $data;
     }
 ?>
-
-      <script>
-    <?php
-          include "../js/main.js";
-          include "../js/bootstrap.js";
-    ?>
-</script>
-   <body>
+  <body>
       <div class="container mt-5 mb-4">
          <div class="row" >
             <div class="col-sm-12 col-md-6 d-flex justify-content-center foroverflow">
@@ -293,6 +281,7 @@
       <?php
         include "../js/bootstrap.js";
         include "../js/user.js";
+        include "../js/main.js";
       ?>
       </script>
 </html>
