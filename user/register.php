@@ -50,20 +50,21 @@
         $mother_name = $_POST['motherName'];
         $birth_place = $_POST['birthPlace'];
         $registration_date = date("Y-m-d");
-
+        
         $account_status = 1;
         $payment_status = 1;
-
+        $rand_fname_str = substr($fname, 0, 2);
+        $rand_lname_str = substr($lname, -1);
+         $random_number = rand(1, 99999);
+         $unique_id = $rand_fname_str.$random_number.$rand_lname_str;
+         $user_unique_id = strtoupper($unique_id);
         //image validation
         $file_ext = explode('.', $img);
         $file_extension_residenceProof = explode('.', $residenceProof);
-        // print_r($file_ext);
-        // die();
+       
         $file_ext_check = strtolower(end($file_ext));
         $file_ext_check_residenceProof = strtolower(end($file_extension_residenceProof));
-        // echo $file_ext_check;
-        // die();
-
+       
         $valid_file_ext = array('png','jpg','jpeg');
 
         $email_result = mysqli_query($mysqli, "SELECT  `email_id` FROM `users` WHERE email_id='$email'");
@@ -137,10 +138,10 @@
                     "INSERT INTO users
                     (`first_name`, `last_name`, `email_id`, `password`, `contact_number`, `address`,
                     `payment_status`, `registration_date`,`pet_name`, `mother_name`, `birth_place`,
-                    `image`,`residence_proof`,`user_role`,`account_status`) 
+                    `image`,`residence_proof`,`user_role`,`account_status`, `user_unique_id`) 
                     VALUES ('$fname','$lname','$email','$hashed_password','$phone','$address',
                     '$payment_status','$registration_date','$pet_name','$mother_name',
-                    '$birth_place','$img','$residenceProof',2, '$account_status')");
+                    '$birth_place','$img','$residenceProof',2, '$account_status', '$user_unique_id')");
                   
                    if ($result) {
                         move_uploaded_file($_FILES['profilePicture']['tmp_name'],"../images/$img"); 
@@ -184,8 +185,8 @@
    <body>
       <div class="container mt-5 mb-4">
          <div class="row" >
-            <div class="col-sm-12 col-md-6 d-flex justify-content-center foroverflow">
-               <div class="overflow-scroll ms-2 overflow-auto">
+            <div class="col-sm-12 col-md-6 foroverflow overflow-scroll">
+               <div class="">
                   <div class="content">
                      <div class="from-wrapper">
                       <form action="" method="post"  name="registration_form" autocomplete="off" enctype = "multipart/form-data">
