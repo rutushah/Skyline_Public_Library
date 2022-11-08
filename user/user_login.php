@@ -166,7 +166,7 @@ if(isset($_SESSION["role"])){
 </div>
 <?php 
                 if($user_selected_role == "user"){
-                  echo '<div class="mb-3"><a class="text-success text-rightside" href="#"><u>Forgot?</u></a></div>';
+                  echo '<div class="mb-3"><a class="text-success text-rightside" href="forgotPassword.php"><u>Forgot?</u></a></div>';
                 }
               ?>
 <div class="col-12 justify-content-center p-2 d-flex flex-row-reverse mb-3">
