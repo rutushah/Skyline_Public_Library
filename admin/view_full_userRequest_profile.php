@@ -21,17 +21,23 @@
 </head>
    
 <body>
-    <div class="header_sidebar">
-        <?php include 'admin_header_sidebar.php';?>
-    </div>
-
-    <div class="main_content">
-        <div class="dashboard">
-            <h1><b>Skyline Public Library<b></h1>
-        </div>
-        <div class="user_requestsHeading">
-            <h2>View User Details</h2>
-        </div>
+    
+<div class="header_sidebar">
+      </div>
+      <div class="row">
+         <div class="col-2">
+            <?php include 'admin_header_sidebar.php';?>
+         </div>
+         <div class="col-10 justify-content-center">
+         <div class=" main_content">
+            <div class="dashboard">
+               <h1><b>Skyline Public Library<b></h1>
+            </div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-6"><div class="h2">View User Details</div></div>
+                
+            </div>
 
         <?php
             $full_user_request_details = mysqli_query($mysqli,"SELECT * FROM `users` WHERE user_id = $id");
@@ -40,8 +46,11 @@
                 $_SESSION['email'] = $row['email_id'];
           
         ?>
-
-        <form action="" class="userRequests" method="post">
+       
+    <div class="row m-4 table-responsive">
+    <div class="col-2"></div>
+     <div class="col-10">
+        <form action="" class="" method="post">
             <div class="mb-3 row">
                 <label for="fname" class="col-sm-2 col-form-label">First Name</label>
                 <div class="col-sm-10">
@@ -93,6 +102,8 @@
                 </div>
             </div>
         </form>
+            </div>
+            
 
     </div>  <!-- End of main-content div -->
   
@@ -111,14 +122,12 @@
             if($user_approved){
             echo '
                 <script>
-                
                     window.location.href = "send_mail.php"
                 </script> 
             ';
             
             }
-        }
-        
+        }  
     ?>
 
     <?php
@@ -131,8 +140,8 @@
              if($user_decline){
                 echo '
                 <script>
-                    alert("User Request Deleted Successfully!!")
-                    window.location.href = "user_requests.php"
+                    // alert("User Request Deleted Successfully!!")
+                    window.location.href = "send_decline_mail.php"
                 </script> 
             ';
              }
@@ -150,7 +159,8 @@
         }
         
     ?>
-
+</div>
+    </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
