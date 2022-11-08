@@ -147,15 +147,28 @@ include_once("../dbConfig.php");
     ?>
 <body>
     
-    <div>
-        <?php include 'admin_header_sidebar.php';?>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            Add Staff Member
-        </div>
-        <div class="card-body">
-            <form class="needs-validation" action="" method="post" id="add_staff_form" name="add_staff_form"  enctype="multipart/form-data" novalidate>
+<div class="header_sidebar">
+      </div>
+      <div class="row">
+         <div class="col-2">
+            <?php include 'admin_header_sidebar.php';?>
+         </div>
+         <div class="col-10 justify-content-center">
+            <div class=" main_content">
+               <div class="dashboard">
+                  <h1><b>Skyline Public Library<b></h1>
+               </div>
+               <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col-6">
+                     <div class="h2">Add Staff Member</div>
+                  </div>
+                  
+               </div>
+               <div class="row m-4 table-responsive">
+                <div class="col-2"></div>
+                <div class="col-10">
+               <form class="needs-validation" action="" method="post" id="add_staff_form" name="add_staff_form"  enctype="multipart/form-data" novalidate>
                 <div class="row mb-3">
                     <label for="fname" class="col-sm-2 col-form-label">First Name</label>
                     <div class="col-sm-8">
@@ -235,8 +248,10 @@ include_once("../dbConfig.php");
                     </div>
                 </div>
             </form>
-        </div>
-    </div>
+            </div>
+               </div>
+</div>
+</div>
      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -19,27 +19,32 @@ include_once("../dbConfig.php");
     </head>
 
 <body>
-    <div class="header_sidebar">
-        <?php include 'admin_header_sidebar.php';?>
-    </div>
-    
-    <div class="main_content">
-        <div class="dashboard">
-            <h1><b>Skyline Public Library<b></h1>
-        </div>
-        <div class="user_requestsHeading">
-            <h2>List of all Users</h2>
-        </div>
-      
-    <div class="input-group">
-        <div class="form-outline">
-            <input type="text" id="myInput" class="form-control" name = "" placeholder = "Search"  />
-        </div>
-        <button type="button" class="btn btn-primary">
-            <i class="fa fa-search"></i>
-        </button>
-    </div>
-    
+<div class="header_sidebar">
+      </div>
+      <div class="row">
+         <div class="col-2">
+            <?php include 'admin_header_sidebar.php';?>
+         </div>
+         <div class="col-10 justify-content-center">
+         <div class=" main_content">
+            <div class="dashboard">
+               <h1><b>Skyline Public Library<b></h1>
+            </div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-6"><div class="h2">List of all Users</div></div>
+                <div class="col-4 d-flex">
+                <div class="row">
+                        <div class="col"></div>
+                        <div class="col-8"><input type="text" id="myInput" class="form-control searching" name = "" placeholder = "Search"  /></div>
+                        <div class="col-2">  <button type="button" class="btn btn-primary">
+                     <i class="fa fa-search"></i>
+                     </button>
+                    </div>
+                    </div>
+            </div>
+            </div>
+            <div class="row" class="overflow-auto">
     <div class="card-body userRequestList">
             <div class="table-responsive text-info m-1 p-1">
             <table class="table table-bordered table-striped table-hover" id = "myTable">
@@ -125,11 +130,12 @@ include_once("../dbConfig.php");
                         }
                 }) 
                 </script>
-
+               </div>
             </div>
-        </div> 
-    
-    </div>
+            </div>
+         </div>
+         </div>
+      </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

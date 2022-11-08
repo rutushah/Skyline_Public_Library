@@ -28,10 +28,28 @@ try {
     $mail->setFrom('from@example.com', 'Komal Vekariya');
     $mail->addAddress($email);     //Add a recipient
  
-    $message = "http://localhost/library_management/user/payment.php?id=".$email;
+    $message = 
+    '<html> 
+    <head> 
+        <title>Welcome to Skyline Library</title> 
+    </head> 
+    <body> 
+        <h1>Thank you for joining with us!</h1> 
+        <table cellspacing="0" width: 100%;"> 
+            <tr>Your Payment Link : </tr>
+            <tr> 
+                <td>http://localhost/library_management/user/payment.php?id='.$email.'</td> 
+            </tr>
+            <tr>
+                <td>After Successful Payment You can Login Yourself!!</td>
+            </tr>
+        </table> 
+    </body> 
+    </html>'; 
+   
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
+    $mail->Subject = 'Payment Link';
     $mail->Body    = $message;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

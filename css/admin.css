@@ -6,7 +6,7 @@
 
 .user-options{
     position: relative;
-    margin-right: 5rem;
+    margin-right: 2rem;
     display: inline-block;
 }
 
@@ -14,7 +14,7 @@
     display: none;
     position: absolute;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(10, 122, 6, 0.2);
     padding: 12px 1px;
     z-index: 1;
     margin: 0.1rem 0 0 1rem;
@@ -23,6 +23,7 @@
 
 .user-options:hover .logout{
     display: block;
+    background-color: whitesmoke;
 }
 
 .sidebar{
@@ -31,8 +32,8 @@
     left: 0;
     bottom: 0;
     z-index: 100;
-    padding: 70px 0 0 10px;
-    border-right: 1px solid;
+    padding: 90px 0 0 10px;
+    
     
 }
 
@@ -57,26 +58,33 @@
 .main_content{
     margin-top: 10rem;
     margin-left: 10rem;
+    width: 85%;
 }
 
 .dashboard h1{
-    margin-top: 10rem;
-    margin-left: 30rem;
+    margin-bottom: 1.5rem;
+    margin-left: 23rem;
 }
 
-.user_requestsHeading h2{
+.user_requestsHeading{
     margin-top: 2rem;
     margin-left: 9rem;
 }
-
+.form-outline{
+    margin-left: 12rem;
+}
 .input-group{
     margin-top: -3rem;
     margin-left: 66rem;
 }
 
-.userRequestList{
+ .userRequestList{
     margin-left: 8rem;
     font-weight: normal;
+    
+}
+.userRequestsing{
+    max-height: 400px;
 }
 
 .userRequests, .addCategory{
@@ -84,7 +92,9 @@
     margin-left: 9rem;
     font-weight: normal;
 }
-
+.searching{
+    width: 8rem;
+}
 
 .user_buttons{
     margin-top: 4rem;
@@ -109,6 +119,15 @@
     font-weight: bold;
 }
 
-form{
-    margin:  0rem 0rem 25rem;
+
+.side-barstyle{
+    padding-top: 2rem;
+}
+.side-barstyle ul li{
+    padding-left: 1.3rem ;
+
+}
+.table-responsive {
+    max-height:300px;
+    width: 55rem;
 }
