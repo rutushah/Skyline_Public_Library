@@ -1,3 +1,5 @@
+//submenu open click code
+
 jQuery(document).ready(function() {
   jQuery('.open_submenu').click(function () {
     jQuery('.submenu', this).toggle();

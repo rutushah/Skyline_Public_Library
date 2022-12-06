@@ -153,19 +153,19 @@ include_once("../dbConfig.php");
          <div class="col-2">
             <?php include 'admin_header_sidebar.php';?>
          </div>
-         <div class="col-10 justify-content-center">
+         <div class="col-12 justify-content-center">
             <div class=" main_content">
                <div class="dashboard">
                   <h1><b>Skyline Public Library<b></h1>
                </div>
                <div class="row">
-                  <div class="col-2"></div>
+                  <div class="col-3"></div>
                   <div class="col-6">
                      <div class="h2">Add Staff Member</div>
                   </div>
                   
                </div>
-               <div class="row m-4 table-responsive">
+               <div class="row m-3">
                 <div class="col-2"></div>
                 <div class="col-10">
                <form class="needs-validation" action="" method="post" id="add_staff_form" name="add_staff_form"  enctype="multipart/form-data" novalidate>

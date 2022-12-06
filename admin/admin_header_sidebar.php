@@ -1,3 +1,18 @@
+<?php
+ob_start();
+session_start();
+
+include_once("../dbConfig.php");
+
+$admin_email = $_SESSION['email_id'];
+$admin_email_query = "SELECT * FROM `staff` where email_id = '$admin_email'";
+$admin_email_query_result = mysqli_query($mysqli, $admin_email_query) or die( mysqli_error($mysqli));
+$admin_Row = mysqli_fetch_row($admin_email_query_result);
+$admin_full_name = $admin_Row[1]. " " . $admin_Row[2];
+
+
+?>
+
 <!doctype html>
 
 <style>
@@ -16,9 +31,9 @@
                 <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
             </svg><br>
             Unwind Nainital-->
-            <img style="height=115px;width: 9rem;margin-left: 2rem;height: 7rem;" src="../images/logo.png" class="bg-success">
+            <img style="height=115px;width: 8rem;margin-left: 2rem;height: 6rem;" src="../images/logo.png" class="bg-success">
         </a> 
-        <span class="welcome_msg">Welcome  <?php echo ""; ?></span>
+        <span class="welcome_msg">Welcome,  <?php echo $admin_full_name; ?></span>
         <ul class="navbar-nav">
             <li class="nav-item text-nowrap user-options">
                 <a href="#">
@@ -113,11 +128,27 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a class="nav-link" href="admin_add_book.php">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                        </svg>
+                                        Add Book
+                                    </a>
+                                </li>
+                                <li>
                                     <a class="nav-link" href="admin_issue_book.php">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
                                             <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                                         </svg>
                                         Issue Book
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="admin_return_book.php">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                        </svg>
+                                        Return Book
                                     </a>
                                 </li>
                             </ul>

@@ -62,6 +62,7 @@
         $file_ext = explode('.', $img);
         $file_extension_residenceProof = explode('.', $residenceProof);
        
+        
         $file_ext_check = strtolower(end($file_ext));
         $file_ext_check_residenceProof = strtolower(end($file_extension_residenceProof));
        
