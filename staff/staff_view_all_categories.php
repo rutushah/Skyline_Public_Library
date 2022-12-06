@@ -1,5 +1,6 @@
 <?php
    include_once("../dbConfig.php");
+   // session_start();
    ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,12 +13,8 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <style>
-         <?php 
-            include "../css/admin.css";
-            include "../css/styles.css";
-            ?>
-      </style>
+      <link rel="stylesheet" type="text/css" href="../css/admin.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
    </head>
    <body>
 
@@ -27,21 +24,21 @@
          <div class="col-2">
             <?php include 'staff_header_sidebar.php';?>
          </div>
-         <div class="col-10 justify-content-center">
+         <div class="col-12 justify-content-center">
             <div class=" main_content">
                <div class="dashboard">
                   <h1><b>Skyline Public Library<b></h1>
                </div>
                <div class="row">
-               <div class="col-2"></div>
+               <div class="col-4"></div>
                   <div class="col-4">
                      <div class="h2">List of all Categories</div>
                   </div>
-                  <div class="col-6">
+                  <div class="col-4">
                     <div class="row">
-                        <div class="col-5"> <a href="staff_add_category.php"><button class="btn btn-success" id="addNewCategory">Add a New Category</button></a></div>
-                        <div class="col-5"><input type="text" id="myInput" class="form-control searching" name = "" placeholder = "Search"  /></div>
-                        <div class="col-2">  <button type="button" class="btn btn-primary">
+                        <div class="col-6"> <a href="staff_add_category.php"><button class="btn btn-success" id="addNewCategory">Add a New Category</button></a></div>
+                        <div class="col-4"><input type="text" id="myInput" class="form-control searching" name = "" placeholder = "Search"  /></div>
+                        <div class="col-1">  <button type="button" class="btn btn-primary">
                      <i class="fa fa-search"></i>
                      </button>
                     </div>
@@ -49,7 +46,7 @@
                   </div>
                </div>
                <div class="card-body userRequestList">
-                  <div class="table-responsive text-info m-1 p-1">
+                  <div class="text-info m-1 p-1">
                      <table class="table table-bordered table-striped table-hover" id="myTable">
                         <thead>
                            <tr>
