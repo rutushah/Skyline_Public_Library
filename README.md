@@ -54,3 +54,29 @@ Password : Admin@123
 Email : staff@gmail.com
 Password : Staff@123
 
+### Prerqequiesites :open_book:
+
+- **Tools for Development** :hammer_and_pick:
+    - PHP 
+    - IDE (Visual Studio)
+    - HTML5, CSS5 and Bootstrap 5
+    - Git
+    - XAMP Server
+
+- **Tools for Testing** :hammer_and_pick:
+    - Java (JDK 8+)
+    - IDE (Eclipse or IntellijI)
+    - Selenium
+    - TestNg
+    - Git
+    - Maven
+    
+    ### Setup For Skyline Public Library Website :notebook_with_decorative_cover:
+    
+     - Clone this project to your local environment
+
+     `https://github.com/rutushah/Skyline_Public_Library.git`
+     
+     - Open the cloned project in installed IDE (Visual Studio) if it is Web Development Code
+     - Open the xamp control and start mysql and apache server.
+     - Launch the url of skyline public library in your local host.
