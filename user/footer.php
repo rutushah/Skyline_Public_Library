@@ -1,0 +1,1 @@
+<div class="copyright fw-light p-2 mt-5"><i class="fa fa-copyright">&nbsp; copyright 2022</i></div>

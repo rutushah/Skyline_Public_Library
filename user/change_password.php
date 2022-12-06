@@ -45,7 +45,7 @@
          }
          if($password != $c_password)
          {
-             $passwordErr = '<p style = "color:red">Password and Confirm Password are Different!!</p>';
+             $passwordErr = '<p style = "color:red">Password and Confirm Password are different!!</p>';
          }
 
          if(!$strong_password_Err && !$passwordErr)
@@ -65,16 +65,16 @@
 <body>
   <div class="container">
     <div class="row ">
-      <div class="col-sm-12 col-md-6 d-flex justify-content-center mt-5">
+      <div class="col-sm-12 col-md-6 d-flex justify-content-center ">
         <div class="content">
           <div class="from-wrapper ">
-            <div class=" display-5 h5 justify-content-center fw-bolder logo1">
+            <div class=" display-5 h5 justify-content-center fw-bolder logo1 mb-5">
                            <img src="../images/logo.png" class="img-fluid logomodify">
                         </div>
             
             <form action="" method="post">
 
-            <div class="mb-3 ">
+            <div class="mb-4 ">
                 <label for="email" class="form-label fw-light">E-mail address</label>
                 <input type="text" class="form-control fw-lighter" id="email" name = "email" placeholder="enter your email address" 
                     value = "<?php echo $email; ?>">
@@ -86,13 +86,13 @@
                     value = "<?php echo $strong_password_Err; ?>">
             </div>
 
-            <div class="mb-3 ">
+            <div class="mb-4 ">
                 <label for="email" class="form-label fw-light">Confirm - Password</label>
                 <input type="password" class="form-control fw-lighter" id="cnf-password" name = "cnf-password" placeholder="Enter your confirm - password" 
                     value = "<?php echo $passwordErr; ?>">
             </div>
                     
-            <button type="submit" id="recover_password" name="recover_password" class="btn btn-primary px-3 py-2 rounded-4  bg-success">Recover Password</button>
+            <button type="submit" id="recover_password" name="recover_password" class="me-4 btn btn-primary px-3 py-2 rounded-4  bg-success">Recover Password</button>
             <button type="reset" id="login" name="login" class="btn btn-primary px-3 py-2 rounded-4  bg-success">Login</button>
 
 
