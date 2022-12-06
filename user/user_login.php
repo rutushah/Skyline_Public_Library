@@ -1,16 +1,14 @@
 <?php
+ob_start();
 session_start();
 
 include_once("../dbConfig.php");
-// echo $role = $_SESSION['role'];
-// die();
+
 $user_selected_role = "";
 $sql = "SELECT * FROM `user_role`";
 $all_user_role = mysqli_query($mysqli,$sql);
 if(isset($_SESSION["role"])){
     $user_selected_role = $_SESSION["role"];
-    // echo $user_selected_role;
-    // die();
 }
 ?>
 <!DOCTYPE html> 
@@ -37,26 +35,18 @@ if(isset($_SESSION["role"])){
     $email    = $_POST['email'];
     $password = $_POST['password'];
     
-      //  echo $password;
-      //  die();
       $get_user_role_id = "SELECT `user_role_id` FROM `user_role` WHERE user_role = '$role' ";
-      // echo $get_user_role_id;
-      // die();
+     
       $user_role_result = mysqli_query($mysqli, $get_user_role_id) or die( mysqli_error($mysqli));
       $role_row = mysqli_fetch_row($user_role_result);
       $selected_user_role = $role_row[0];
-      //  echo $selected_user_role;
-      //  die();
 
       if($role == 'user'){
         $show_data = mysqli_query($mysqli, "SELECT * FROM `users` WHERE user_role = '$selected_user_role' AND (email_id = '$email') 
         AND user_status = 0");
         while($data = mysqli_fetch_array($show_data)){
-       // echo $data['password'];
-       // die();
+      
         $password_verify = password_verify($password, $data['password']);
-       // echo $password_verify;
-        //die();
 
         $result = "SELECT * FROM `users` WHERE user_role = '$selected_user_role' AND (email_id = '$email') 
         AND user_status = 0 AND account_status = 0 AND payment_status = 0";
@@ -64,12 +54,9 @@ if(isset($_SESSION["role"])){
         $user_matched = mysqli_num_rows($query_result);
         $Row = mysqli_fetch_row($query_result);
 
-        
-
         $compare_email = mysqli_query($mysqli, "select email_id from users where email_id = '$email'");
         $email_record = mysqli_num_rows($compare_email);
   
-        // $query_result = mysqli_query($mysqli, $result) or die ( mysqli_error($mysqli));
         if($email_record <= 0)
         {
           echo '<script>alert("Email Id Not Registered!! Click on Sign up..")</script>';
@@ -77,16 +64,19 @@ if(isset($_SESSION["role"])){
         else if($user_matched > 0){
           $id = $Row[0];
           $_SESSION['id'] = $id;
-          $_SESSION['email_id'] = $email;
-          if($role == "user"){
+          // $_SESSION['email_id'] = $email;
+          
+          
             if($password_verify){
             echo "
               <script> 
                 alert('Customer logged in successfully!!!')
                 window.location.href = 'user_dashboard.php'
               </script>";
+              $_SESSION['email_id'] = $email;
+              $_SESSION["role"] = $role;
             }  
-          }
+       
         }else{
           echo '<script>alert("You cannot login !! Please Contact to the Administrative Department...")</script>';
       }
@@ -97,8 +87,6 @@ if(isset($_SESSION["role"])){
 
       while ($data = mysqli_fetch_array($staff_data)){
 
-        // echo $data['password'];
-        // die();
       $verify_staff_password = password_verify($password, $data['password']);
 
       $result = "SELECT * FROM `staff` WHERE user_role = '$selected_user_role' AND (email_id = '$email') AND user_status = 0";
@@ -108,10 +96,7 @@ if(isset($_SESSION["role"])){
 
       $compare_email = mysqli_query($mysqli, "select email_id from staff where email_id = '$email'");
       $email_record = mysqli_num_rows($compare_email);
-      echo $email_record;
-      // die();
-
-      // $query_result = mysqli_query($mysqli, $result) or die ( mysqli_error($mysqli));
+    
       if($email_record <= 0)
       {
         echo '<script>alert("Email Id Not Registered!! Click on Sign up..")</script>';
@@ -124,6 +109,8 @@ if(isset($_SESSION["role"])){
                 alert('Staff logged in successfully!!!')
                 window.location.href = '../staff/staff_dashboard.php'
               </script>";
+              $_SESSION['email_id'] = $email;
+              $_SESSION["role"] = $role;
         }else if($role == "admin"){
           if($verify_staff_password)
             echo "
@@ -131,6 +118,8 @@ if(isset($_SESSION["role"])){
                 alert('Admin logged in successfully!!!')
                 window.location.href = '../admin/admin_dashboard.php'
               </script>";
+              $_SESSION['email_id'] = $email;
+              $_SESSION["role"] = $role;
         }
       }
     }

@@ -10,12 +10,8 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <style>
-         <?php 
-            include "../css/admin.css";
-            include "../css/styles.css";
-            ?>
-      </style>
+      <link rel="stylesheet" type="text/css" href="../css/admin.css">
+      <link rel="stylesheet" type="text/css" href="../css/styles.css">
    </head>
    <body>
       <div class="header_sidebar">
@@ -24,17 +20,17 @@
          <div class="col-2">
             <?php include 'admin_header_sidebar.php';?>
          </div>
-         <div class="col-10 justify-content-center">
+         <div class="col-12 justify-content-center">
             <div class=" main_content">
                <div class="dashboard">
                   <h1><b>Skyline Public Library<b></h1>
                </div>
                <div class="row">
-                  <div class="col-2"></div>
-                  <div class="col-6">
+                  <div class="col-4"></div>
+                  <div class="col-4">
                      <div class="h2">List of all Users Requests</div>
                   </div>
-                  <div class="col-4 d-flex">
+                  <div class="col-4">
                   <div class="row">
                         <div class="col"></div>
                         <div class="col-8"><input type="text" id="myInput" class="form-control searching" name = "" placeholder = "Search"  /></div>
@@ -47,7 +43,7 @@
                </div>
                <div class="row" class="overflow-auto">
                   <div class="card-body userRequestList">
-                     <div class="table-responsive text-info m-1 p-1">
+                     <div class="text-info m-1 p-1">
                         <table class="table table-bordered table-striped table-hover" id = "myTable">
                            <thead>
                               <tr>

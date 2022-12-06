@@ -1,7 +1,7 @@
 <!-- Include php files -->
 <?php 
     ob_start();
-        session_start();
+      //  session_start();
         include_once("../dbConfig.php");
         $id = $_GET['profile_id'];
     ?>
@@ -12,12 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Staff Profile</title>
-    <style>
-            <?php 
-                include "../css/admin.css";
-                include "../css/styles.css";
-            ?>
-        </style>
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
    
 <body>
@@ -27,14 +23,14 @@
          <div class="col-2">
             <?php include 'admin_header_sidebar.php';?>
          </div>
-         <div class="col-10 justify-content-center">
+         <div class="col-12 justify-content-center">
          <div class=" main_content">
             <div class="dashboard">
                <h1><b>Skyline Public Library<b></h1>
             </div>
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-6"><div class="h2">View Staff Details</div></div>
+                <div class="col-4"></div>
+                <div class="col-4"><div class="h2">View Staff Details</div></div>
                 
             </div>
         <?php
@@ -44,7 +40,7 @@
                 $_SESSION['email'] = $row['email_id'];
           
         ?>
-<div class="row m-4 table-responsive">
+<div class="row m-4">
     <div class="col-2"></div>
      <div class="col-10">
         <form action="" class="" method="post">

@@ -96,10 +96,10 @@ if(isset($_SESSION["role"])){
 <body>
   <div class="container">
     <div class="row ">
-      <div class="col-sm-12 col-md-6 d-flex justify-content-center mt-5">
-        <div class="content">
-          <div class="from-wrapper ">
-            <div class=" display-5 h5 justify-content-center fw-bolder logo1">
+      <div class="col-sm-12 col-md-6 d-flex justify-content-center  ">
+        <div class="content pe-5">
+          <div class="from-wrapper  ">
+            <div class=" display-5 h5 justify-content-center fw-bolder logo1 mb-5">
                            <img src="../images/logo.png" class="img-fluid logomodify">
                         </div>
             
@@ -124,7 +124,7 @@ if(isset($_SESSION["role"])){
                 <div class="error-msg"> <?php echo $petNameError;  ?> </div>
             </div>
 
-            <div class="mb-3 ">
+            <div class="mb-4 ">
                 <label for="birthPlace" class="form-label fw-light">Birth Place</label>
                 <input type="text" class="form-control fw-lighter" id="birthPlace" name = "birthPlace" placeholder="Birth Place">
                 <div class="error-msg"> <?php echo $birthPlaceError; ?> </div>

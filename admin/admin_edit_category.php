@@ -12,12 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Category</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <style>
-            <?php 
-                include "../css/admin.css";
-                include "../css/styles.css";
-            ?>
-        </style>
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
 <body>
 
@@ -30,9 +26,13 @@
         <div class="dashboard">
             <h1><b>Skyline Public Library<b></h1>
         </div>
-        <div class="user_requestsHeading">
-            <h2>Edit a Category</h2>
-        </div>
+        <div class="row">
+                  <div class="col-4"></div>
+                  <div class="col-4">
+                     <div class="h2">Edit Category</div>
+                  </div>
+                  
+               </div>
 
         <?php
             //edit category
