@@ -62,3 +62,23 @@
 .maxwidth{
 	max-width: 100%;
 }
+.dashboardimg{
+	width: 20rem;
+	height: 22rem;
+	padding-top: 2rem;
+}
+.bookimg{
+	width: 20rem;
+	height: 25rem;
+}
+.centering{
+	text-align: center;
+	margin-top: 1.7rem;
+}
+.editform{
+	margin-left: 15rem;
+	margin-right: 10rem;
+}
+.editbutton{
+	margin-left: 10rem;
+}

@@ -6,8 +6,9 @@
 
 .user-options{
     position: relative;
-    margin-right: 2rem;
+    margin-right: 3.8rem;
     display: inline-block;
+    margin-left: -5rem;
 }
 
 .logout{
@@ -49,7 +50,7 @@
 }
 
 .welcome_msg{
-    margin-left: 50rem;
+    margin-left: 45rem;
     text-decoration-line: underline;
     font-weight: bold;
     font-size: large;
@@ -63,7 +64,12 @@
 
 .dashboard h1{
     margin-bottom: 1.5rem;
-    margin-left: 23rem;
+    text-align: center;
+    /* margin-left: 23rem; */
+}
+
+.main_content .h2{
+    text-align: center;
 }
 
 .user_requestsHeading{
@@ -130,4 +136,8 @@
 .table-responsive {
     max-height:300px;
     width: 55rem;
+}
+
+.flex-md-nowrap{
+    background-color:white;
 }
