@@ -1,6 +1,17 @@
 <!doctype html>
 <?php
+    session_start();
 
+    include_once("../dbConfig.php");
+    
+    $email = $_SESSION['email_id'];
+    $sql = "SELECT * FROM `staff` where email_id = '$email'";
+    $query_result = mysqli_query($mysqli, $sql) or die( mysqli_error($mysqli));
+    $Row = mysqli_fetch_row($query_result);
+    // echo $Row[0];
+    // die();
+    $staff_login_id = $Row[0]; 
+    $full_name = $Row[1]. " " . $Row[2];
 ?>
 <style>
          <?php
@@ -20,7 +31,7 @@
             Unwind Nainital-->
             <img style="height=115px;width: 9rem;margin-left: 2rem;height: 7rem;" src="../images/logo.png" class="bg-success">
         </a> 
-        <span class="welcome_msg">Welcome, <?php echo ""; ?></span>
+        <span class="welcome_msg">Welcome, <?php echo $full_name;?></span>
         <ul class="navbar-nav">
             <li class="nav-item text-nowrap user-options">
                 <a href="#">
@@ -90,11 +101,27 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a class="nav-link" href="staff_add_book.php">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                        </svg>
+                                        Add Book
+                                    </a>
+                                </li>
+                                <li>
                                     <a class="nav-link" href="staff_issue_book.php">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
                                             <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                                         </svg>
                                         Issue Book
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="staff_return_book.php">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                        </svg>
+                                        Return Book
                                     </a>
                                 </li>
                             </ul>
