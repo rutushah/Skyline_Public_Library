@@ -80,3 +80,18 @@ Password : Staff@123
      - Open the cloned project in installed IDE (Visual Studio) if it is Web Development Code
      - Open the xamp control and start mysql and apache server.
      - Launch the url of skyline public library in your local host.
+
+  
+     -You can also create your new customer login by registering your new customer user from registration page.
+      
+  ### Setup for Skyline Public Library Test Automation in Selenium :notebook_with_decorative_cover:
+    - Clone this project to your local environment
+
+    `https://github.com/rutushah/Skyline_Public_Library.git`
+
+- Open the cloned project in installed IDE.
+- Wait for maven to load all the dependencies. (It may take 2-3 minutes depending on your connection)
+    - If you see any error or dependencies not downloaded, run below command on project root directory via Command Prompt or Terminal.
+
+      `mvn clean install -DskipTests=true`
+    
