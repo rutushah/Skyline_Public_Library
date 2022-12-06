@@ -81,3 +81,10 @@
     margin: 10rem 0 4rem 12rem;
 }
 
+.main_content .h2{
+    text-align: center;
+}
+
+.flex-md-nowrap{
+    background-color:white;
+}
