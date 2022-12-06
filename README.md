@@ -43,16 +43,16 @@ members as well. The Admin can also block a specific book from the list of books
 ### Credentials to Access Skyline Public Library
 
 ### Credentials for User
-Email : rutushah105@gmail.com	
-Password : Rutu@123
+    - Email : rutushah105@gmail.com	
+    - Password : Rutu@123
 
 ### Credentials for Admin
-Email : admin@gmail.com
-Password : Admin@123
+    - Email : admin@gmail.com
+    - Password : Admin@123
 
 ### Credentials for Staff
-Email : staff@gmail.com
-Password : Staff@123
+    - Email : staff@gmail.com
+    - Password : Staff@123
 
 ### Prerqequiesites :open_book:
 
