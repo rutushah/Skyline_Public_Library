@@ -1,5 +1,7 @@
 <?php
-   include_once("../dbConfig.php");
+ob_start();
+//session_start();
+include_once("../dbConfig.php");
    ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,21 +14,14 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-     
-     <style>
-         <?php 
-            include "../css/admin.css";
-            include "../css/styles.css";
-            include "../css/user.css";  
-            include "../css/bootstrap.css";
-            ?>
-      </style>
+      <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
    </head>
    <?php
+  
     $user = $book = "";
     if(isset($_POST['issue_book']))
     {
@@ -73,19 +68,26 @@
          <div class="col-2">
             <?php include 'admin_header_sidebar.php';?>
          </div>
-         <div class="col-10 justify-content-center">
+         <div class="col-12 justify-content-center">
             <div class=" main_content">
                <div class="dashboard">
                   <h1><b>Skyline Public Library<b></h1>
                </div>
+               
                <div class="row">
-               <div class="col-2"></div>
+                  <div class="col-4"></div>
                   <div class="col-4">
                      <div class="h2">Issue Book</div>
                   </div>
+                  
+               </div>
+               <div class="row m-4">
                </div>
                
-               <form autocomplete="off" action="" method="POST">
+               <div class="ms-5  row">
+                <div class="col-2"></div>
+                <div class="col-8 justify-content-center card-body ">
+                <form autocomplete="off" action="" method="POST">
         <template id="user_template">
             <?php
                 while ($user = mysqli_fetch_array($query_result,MYSQLI_ASSOC)):;
@@ -97,7 +99,8 @@
             ?>
         </template>
         <label for="user_list" class="form-label">User :</label>
-        <input type="text" name="user" id="user" class="user" placeholder="User" list="user_list" autocomplete="off" value="<?php if (isset($_POST['user'])) echo $_POST['user']; ?>"/>
+        <input type="text" name="user" id="user" class="user ms-1 mb-4" placeholder="User" list="user_list" autocomplete="off" value="<?php if (isset($_POST['user'])) echo $_POST['user']; ?>"/><br>
+        <span id="userIssueBookError"> </span>
         <datalist id="user_list"></datalist>
         <template id="book_template">
             <?php
@@ -110,12 +113,19 @@
             ?>
         </template>
         <label for="book_list" class="form-label">Book :</label>
-        <input type="text" name="book" id="book" class="book" placeholder="Book" list="book_list" autocomplete="off" value="<?php if (isset($_POST['book'])) echo $_POST['book']; ?>"/>
+        <input type="text" name="book" id="book" class="book mb-4" placeholder="Book" list="book_list" autocomplete="off" value="<?php if (isset($_POST['book'])) echo $_POST['book']; ?>"/>
+        <span id="issueBookError"> </span>
         <datalist id="book_list"></datalist>
         <input type="hidden" name="book_data_value" id="book_data_value">
-        <input type="hidden" name="user_data_value" id="user_data_value">
-        <button type="submit" id="issue_book" name="issue_book" class="btn btn-primary px-3 py-2 rounded-4  bg-success">Issue Book</button>
+        <input type="hidden" name="user_data_value" id="user_data_value"><br>
+        <button type="submit" id="issue_book" name="issue_book" class="ms-5 btn btn-primary px-3 py-2 rounded-4  bg-success">Issue Book</button>
     </form>
+                </div>
+               </div>
+
+
+
+              
     <script>
         var user = document.querySelector('#user');
         var user_list = document.querySelector('#user_list');
@@ -168,6 +178,8 @@
         });
     </script>
 
+      
+
     <script> 
         <?php 
             include "../js/main.js";
@@ -175,7 +187,6 @@
             include "../js/bootstrap.js";
         ?>
     </script>
-
             </div>
          </div>
       </div>

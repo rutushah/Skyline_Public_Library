@@ -1,3 +1,14 @@
+<?php
+               //session_start();
+               if(isset($_SESSION["role"])){
+                  
+                  $role = $_POST['role'];
+                  //$_SESSION['role'] = $_POST['role'];
+                  //header("Location: login.php?role=$role");
+                  
+               }
+            ?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -26,7 +37,8 @@
                      </div>
                      <div class="fontincrease p-2 mb-5 ">Thank you!! Your Payment is done.</div>
                      <div class="col-12 justify-content-center p-2 d-flex flex-row-reverse mb-5">
-                        <button type="submit" id="login" name="login" class="btn btn-primary px-3 py-2 rounded-4  bg-success">Sign in</button>
+                        <button type="submit" id="login" name="login" class="btn btn-primary px-3 py-2 rounded-4  bg-success" 
+                        onclick = "window.location.href = 'user_login.php?role=user'">Sign in</button>
                      </div>
                   </div>
                </div>

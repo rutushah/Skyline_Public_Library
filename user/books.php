@@ -21,7 +21,7 @@ include_once("../dbConfig.php");
 <?php
 $category_id = $_GET['category'];
 $cat_name = "SELECT category_name FROM category WHERE category_id = $category_id";
-$get_category_name = mysqli_query($mysqli,$cat_name); 
+$get_category_name = mysqli_query($mysqli,$cat_name);
 $result = mysqli_fetch_row($get_category_name); 
 $category_name = $result[0];
 
